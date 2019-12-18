@@ -9,10 +9,16 @@ const ingredients = [
   "Приправы"
 ];
 
-const listIngredients = document.querySelector("#ingredients");
+const ul = document.querySelector("#ingredients");
 
-for (let i = 0; i < ingredients.length; i++) {
-  const newElement = document.createElement("li");
-  newElement.innerHTML = ingredients[i];
-  listIngredients.appendChild(newElement);
-}
+const createIngredient = array => {
+  const items = array.map(i => {
+    const li = document.createElement("li");
+    li.textContent = i;
+    return li;
+  });
+
+  ul.append(...items);
+};
+
+createIngredient(ingredients);

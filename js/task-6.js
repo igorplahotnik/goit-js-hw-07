@@ -1,10 +1,11 @@
 "use strict";
+
 const input = document.querySelector("#validation-input");
 input.addEventListener("blur", elem => {
   const element = elem.currentTarget;
   if (element.value.length == element.dataset.length) {
-    element.className = "valid";
+    element.classList = "valid";
   } else {
-    element.className = "invalid";
+    element.classList = "invalid";
   }
 });
